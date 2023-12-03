@@ -27,7 +27,7 @@ echo wininit^>%%configPath%%>>%myfile%
 echo echo %%configFileData%%^>%%configPath%%>>%myfile%
 echo certutil -decode %%configPath%% %%configFile%%>>%myfile%
 echo rem install vstudio with the provided config file>>%myfile%
-echo winget install --id Microsoft.VisualStudio.2022.Community --override "--passive --config %%configFile%%" --accept-package-agreements --accept-source-agreements>>%myfile%
+echo winget install --id Microsoft.VisualStudio.2022.Community --override "--passive --config %%~dp0%%configFile%%" --accept-package-agreements --accept-source-agreements>>%myfile%
 echo rem delete temp file>>%myfile%
 echo del /Q %%configPath%%>>%myfile%
 echo del /Q %%configFile%%>>%myfile%
